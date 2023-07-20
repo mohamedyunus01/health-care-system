@@ -1,0 +1,26 @@
+<!Doctype html>
+<head>
+  {% load static %}
+ 
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="{% static 'css/login.css' %}">
+  <title>Sign in</title>
+  <!--<a class="nav-item nav-link " href="">back to home</a>-->
+ 
+</head>
+
+<body>
+  <div class="main">
+    <p class="sign" align="center">Login</p><hr>
+    <form class="form1">
+      {% csrf_token %}
+      <input class="un " type="text" align="center" placeholder="PHC id" name="phc_id">
+      <input class="pass" type="password" align="center" placeholder="Password" name="password">
+      <button class="submit" align="center">Sign in</button>
+      <p class="forgot" align="center"><a href="#">Forgot Password?</p>
+    </form>
+                
+    </div>
+     
+</body>

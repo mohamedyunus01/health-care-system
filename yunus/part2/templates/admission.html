@@ -1,0 +1,77 @@
+{% load crispy_forms_tags %}
+<!doctype html>
+<html>
+<head>
+  {% load static %}
+
+<title>admission </title>
+
+<link rel="stylesheet" type="text/css" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+<link rel="stylesheet" href="{% static 'css/layout.css' %}">
+
+<style>
+  .table{
+    width:50%;    
+  }
+  h1{
+    margin-left: 30%;
+    padding-top: 20px;
+  }
+
+
+</style>
+
+
+
+
+
+</head>
+<body>
+
+
+<header >
+    <div>
+      <img src="{% static 'img/phc.png' %}" alt="Logo" class="float-right header-img">
+        <img src="{% static 'img/Tamil.png' %}" alt="Emplem" class="float-left header-img">
+
+        <h1>Primary Health Care Centers</h1>
+        <img src="" alt="" class="float-right header-img">
+    </div>
+    <nav class="navbar navbar-expand-lg navigation float-bottom">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav ">
+            <a class="nav-item nav-link " href="/{{code}}/home">Home <span class="sr-only">(current)</span></a>
+            
+            <a class="nav-item nav-link active" href="/{{code}}/admission">Admission</a>
+            <a class="nav-item nav-link" href="/{{code}}/discharge">Discharge</a>
+            <a class="nav-item nav-link " href="/{{code}}/doctor_details">Doctor details</a>
+            <a class="nav-item nav-link " href="/{{code}}/admission_details">Admission details</a>
+            <a class="nav-item nav-link " href="/{{code}}/discharge_details">Discharge details</a>
+            
+
+
+        </div>
+      </div>
+      <a class="btn btn-info float-right"  href="/login/"><b>Log Out</b></a>
+    </nav>
+</header>
+
+<div class="container">
+    <form method="post">
+        {% csrf_token %}
+        {{form|crispy}}
+        <button type="submit" class="btn btn-primary">submit</button>
+    </form>
+</div>
+<br><br><br>
+
+<footer class="page-footer">
+    <small>&copy; Copyright 2023 .All Rights Reserved</small> 
+    </footer>
+ 
+  
+</body>
+</html>
